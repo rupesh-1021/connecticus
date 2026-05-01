@@ -58,12 +58,18 @@ document.addEventListener("click", e => {
   }
 });
 
+function showAlert(message) {
+  document.getElementById('alertMessage').innerText = message;
+  document.getElementById('customAlert').style.display = 'flex';
+}
+
+function closeAlert() {
+  document.getElementById('customAlert').style.display = 'none';
+}
 
 // 🚀 SUBMIT TO GOOGLE FORM
 function submitForm() {
 
-  if (!selectedRole) return alert("Please select your role");
-  if (!selectedInterest) return alert("Please select interest");
 
   let finalRole = selectedRole;
   if (selectedRole === "Other") {
@@ -76,8 +82,12 @@ function submitForm() {
   const email = document.getElementById("email").value.trim();
   const mobile = document.getElementById("mobile").value.trim();
 
-  if (!name || !company || !email || !mobile) {
-    return alert("Please fill all required fields");
+  if (!name || !company || !email || !mobile || 
+      selectedRole === "Your Role?" || 
+      selectedInterest === "Interested to work closely with Team?") {
+      
+    showAlert("Please fill all the fields and select options.");
+    return;
   }
 
   const btn = document.querySelector("button");
