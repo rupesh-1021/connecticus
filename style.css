@@ -1,0 +1,469 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at top, #1e293b, #020617 70%);
+  color: white;
+  text-align: center;
+  min-height: 100vh;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(15px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* ====================== HEADER ====================== */
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 30px;
+  padding: 0 20px;
+  flex-wrap: wrap;
+}
+
+/* LOGO */
+.logo-section {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 130px;
+  width: auto;
+  border-radius: 20px;
+  object-fit: contain;
+}
+
+.title-section {
+  text-align: center;
+}
+
+#welcome {
+  font-size: 1.8rem;
+  font-weight: 600;
+  opacity: 0;
+  animation: fadeIn 1.8s forwards;
+}
+
+.subtitle {
+  font-size: 0.95rem;
+  color: #cbd5f5;
+  margin-bottom: 20px;
+}
+
+/* ====================== MAIN CONTAINER - FIXED ====================== */
+.container {
+  width: 90%;
+  max-width: 420px;
+  margin: 20px auto 80px;           /* Changed from absolute positioning */
+  padding: 25px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(12px);
+  border: 2px solid rgba(255,255,255,0.15);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 25px rgba(59,130,246,0.2);
+}
+
+/* Form Styles */
+.form-box {
+  display: none;
+  animation: slideUp 0.6s ease forwards;
+}
+
+input, button, .dropdown-trigger {
+  width: 100%;
+  padding: 13px 14px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background: rgba(255,255,255,0.08);
+  color: white;
+  box-sizing: border-box;
+  font-size: 15px;
+}
+
+input::placeholder {
+  color: #cbd5f5;
+}
+
+input:focus {
+  box-shadow: 0 0 10px rgba(59,130,246,0.6);
+}
+
+/* ====================== DROPDOWN ====================== */
+.dropdown {
+  position: relative;
+  margin: 10px 0;
+}
+
+.dropdown-trigger {
+  height: 48px;
+  padding: 0 14px;
+  font-size: 15px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  color: #cbd5f5;
+}
+
+.dropdown.open .dropdown-trigger {
+  box-shadow: 0 0 10px rgba(59,130,246,0.6);
+}
+
+.dropdown-menu {
+  position: absolute;
+  width: 100%;
+  background: rgba(15,23,42,0.95);
+  backdrop-filter: blur(12px);
+  border-radius: 10px;
+  margin-top: 6px;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.25s ease;
+  max-height: 0;
+  overflow: hidden;
+  z-index: 100;
+}
+
+.dropdown.open .dropdown-menu {
+  max-height: 260px;
+  opacity: 1;
+  transform: translateY(0);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.dropdown-menu::-webkit-scrollbar {
+  width: 6px;
+}
+.dropdown-menu::-webkit-scrollbar-thumb {
+  background: rgba(59,130,246,0.5);
+  border-radius: 10px;
+}
+
+.dropdown-search {
+  width: calc(100% - 16px);
+  margin: 8px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: none;
+  background: rgba(255,255,255,0.06);
+  color: white;
+}
+
+.dropdown-item {
+  padding: 10px 12px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background: rgba(59,130,246,0.3);
+}
+
+.arrow {
+  font-size: 14px;
+  transition: 0.3s;
+}
+.dropdown.open .arrow {
+  transform: rotate(180deg);
+}
+
+/* Other Role Input */
+#otherRole {
+  display: none;
+  animation: slideUp 0.3s ease;
+}
+
+/* Button */
+button {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  cursor: pointer;
+  font-size: 16px;
+  padding: 14px;
+}
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(34,197,94,0.6);
+}
+
+/* Invite Message */
+.invite-msg {
+  display: none;
+  margin-top: 20px;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+/* Footer */
+.footer {
+  position: fixed;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 900px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.4), 0 0 20px rgba(59,130,246,0.15);
+  padding: 12px 20px;
+  font-size: 13px;
+  color: #cbd5f5;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer a {
+  color: #cbd5f5;
+  text-decoration: none;
+  margin-left: 12px;
+  transition: 0.3s;
+}
+
+.footer a:hover {
+  color: #3b82f6;
+}
+
+/* Contact Panel */
+.contact-panel {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 300px;
+  padding: 15px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6), 0 0 20px rgba(59,130,246,0.2);
+  color: #cbd5f5;
+  font-size: 14px;
+  opacity: 0;
+  transform: translateY(-20px) translateX(20px);
+  pointer-events: none;
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+.contact-panel.show {
+  opacity: 1;
+  transform: translateY(0) translateX(0);
+  pointer-events: auto;
+}
+.contact-panel .contact-header .close-btn {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  color: #cbd5f5;
+  font-size: 16px;
+  cursor: pointer;
+}
+/* ==================== INVITE MESSAGE LINK ==================== */
+
+.invite-msg a {
+  display: inline-block;
+  margin: 20px 0;
+  padding: 14px 28px;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.05rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255,255,255,0.2);
+}
+
+.invite-msg a:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 12px 30px rgba(59, 130, 246, 0.5);
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  color: white;
+}
+
+.invite-msg a:active {
+  transform: scale(0.98);
+}
+
+/* Optional: Make the whole success message look better */
+.invite-msg {
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.invite-msg h2 {
+  color: #22c55e;
+  margin-bottom: 20px;
+}
+
+.invite-msg p {
+  margin: 16px 0;
+  line-height: 1.6;
+}
+/* Full screen overlay */
+.modal-overlay {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dim background */
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Glassmorphism Box */
+.glass-alert {
+  background: rgba(255, 255, 255, 0.1); /* Transparent white */
+  backdrop-filter: blur(15px); /* The "Glass" blur effect */
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  padding: 30px;
+  width: 300px;
+  text-align: center;
+  color: white;
+  
+  /* Red Outside Shadow */
+  box-shadow: 0 0 20px 5px rgba(255, 0, 0, 0.6);
+}
+
+.alert-content p {
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.alert-content button {
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 8px 25px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.alert-content button:hover {
+  background: #ff0000;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.4);
+}
+
+/* ====================== MEDIA QUERIES ====================== */
+
+/* Small Mobile Phones */
+@media (max-width: 480px) {
+  .header {
+    margin-top: 20px;
+    gap: 10px;
+  }
+  
+  .logo {
+    height: 100px;
+  }
+  
+  #welcome {
+    font-size: 1.55rem;
+  }
+  
+  .container {
+    margin: 15px auto 70px;
+    padding: 20px 18px;
+  }
+  
+  input, .dropdown-trigger, button {
+    padding: 12px 14px;
+    font-size: 14.5px;
+  }
+  
+  .footer {
+    bottom: 10px;
+    padding: 10px 15px;
+    font-size: 12.5px;
+  }
+}
+
+/* Tablets & Small Laptops */
+@media (min-width: 481px) and (max-width: 768px) {
+  .logo {
+    height: 125px;
+  }
+  
+  .container {
+    max-width: 460px;
+    padding: 28px;
+    margin: 25px auto 80px;
+  }
+}
+
+/* iPad Landscape & Medium Screens */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .logo {
+    height: 135px;
+  }
+  
+  .container {
+    max-width: 480px;
+    padding: 32px;
+  }
+}
+
+/* Desktop & Large Screens */
+@media (min-width: 1025px) {
+  .logo {
+    height: 150px;
+  }
+  
+  .container {
+    max-width: 500px;
+    padding: 35px;
+  }
+  
+  #welcome {
+    font-size: 2rem;
+  }
+}
+
+/* Very Short Screens Fix */
+@media (max-height: 650px) {
+  .container {
+    margin-top: 10px;
+    margin-bottom: 60px;
+  }
+  
+  .header {
+    margin-top: 15px;
+  }
+}
+
+/* Footer Responsive */
+@media (max-width: 600px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+}

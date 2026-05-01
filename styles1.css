@@ -1,0 +1,347 @@
+/* styles1.css - Connecticus Main App */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at top, #1e293b, #020617 70%);
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  width: 100%;
+  padding: 20px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  height: 140px;
+  width: auto;
+  border-radius: 20px;
+}
+
+.title-section h1 {
+  font-size: 2.1rem;
+  font-weight: 700;
+}
+
+.title-section p {
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
+
+.nav {
+  display: flex;
+  gap: 12px;
+}
+
+.nav-btn {
+  padding: 10px 24px;
+  background: rgba(255,255,255,0.08);
+  border: none;
+  border-radius: 50px;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav-btn:hover,
+.nav-btn.active {
+  background: linear-gradient(135deg, #3b82f6, #60a5fa);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+}
+
+.marquee-container {
+  width: 100%;
+  background: rgba(15, 23, 42, 0.9); /* Professional deep navy/charcoal */
+  color: #ffffff;
+  padding: 10px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px); /* Keeps the glassmorphism theme consistent */
+}
+
+.marquee-content {
+  display: inline-block;
+  padding-left: 100%;
+  animation: marquee-animation 25s linear infinite;
+}
+
+@keyframes marquee-animation {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Pause marquee on hover so users can read specific updates */
+.marquee-container:hover .marquee-content {
+  animation-play-state: paused;
+  cursor: default;
+}
+
+/* Main Container */
+.main-container {
+  flex: 1;
+  padding: 40px 5%;
+  max-width: 1300px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Sections */
+.section {
+  display: none;
+  animation: fadeIn 0.6s ease forwards;
+}
+
+.section.active {
+  display: block;
+}
+
+.section-title {
+  font-size: 2.4rem;
+  margin-bottom: 8px;
+  background: linear-gradient(90deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  color: #cbd5f5;
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+}
+
+/* Search Bar */
+.search-bar {
+  display: flex;
+  gap: 15px;
+  margin: 30px 0 40px 0;
+  max-width: 700px;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 16px 20px;
+  font-size: 1.1rem;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 12px;
+  color: white;
+}
+
+.search-bar button {
+  padding: 0 40px;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Sports Grid */
+.sports-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 18px;
+  margin-bottom: 50px;
+}
+
+.sport-card {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 16px;
+  padding: 24px 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.sport-card:hover {
+  transform: translateY(-10px);
+  background: rgba(59, 130, 246, 0.25);
+}
+
+/* Turf Results */
+.turf-results {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 25px;
+}
+
+.turf-card {
+  background: rgba(255,255,255,0.07);
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.12);
+  transition: all 0.4s ease;
+}
+
+.turf-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+}
+
+.turf-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.turf-info {
+  padding: 20px;
+}
+
+.turf-info h3 {
+  font-size: 1.35rem;
+  margin-bottom: 10px;
+}
+
+.price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #4ade80;
+  margin: 12px 0;
+}
+
+/* Glass Card */
+.glass-card {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 18px;
+  padding: 28px;
+  margin-bottom: 30px;
+}
+
+.glass-input {
+  width: 100%;
+  padding: 14px 18px;
+  margin: 12px 0;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 10px;
+  color: white;
+  font-size: 1rem;
+}
+
+.glass-input:focus {
+  border-color: #60a5fa;
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.3);
+}
+
+/* Buttons */
+.btn-primary {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(59, 130, 246, 0.5);
+}
+
+/* Player Grid */
+.player-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 22px;
+}
+
+.player-card {
+  background: rgba(255,255,255,0.07);
+  border-radius: 16px;
+  padding: 22px;
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+/* Footer */
+.footer {
+  position: fixed;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 900px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.4), 0 0 20px rgba(59,130,246,0.15);
+  padding: 12px 20px;
+  font-size: 13px;
+  color: #cbd5f5;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer a {
+  color: #cbd5f5;
+  text-decoration: none;
+  margin-left: 12px;
+  transition: 0.3s;
+}
+
+.footer a:hover {
+  color: #3b82f6;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px 5%;
+  }
+  .nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

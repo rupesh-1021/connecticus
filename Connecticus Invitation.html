@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Connecticus Prototype Launch</title>
+<link rel="icon" type="image/x-icon" href="favicon.jpeg">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body>
+
+<div class="header">
+  <div class="logo-section">
+    <img src="connecticus-logo.jpeg" class="logo" alt="Connecticus Logo">
+  </div>
+
+  <div class="title-section">
+    <div id="welcome">Welcome to Connecticus!</div>
+    <div class="subtitle">Be the first to experience our prototype launch</div>
+  </div>
+</div>
+
+<div class="container">
+  <p class="subtitle">Join us in building something impactful..!</p>
+
+  <div class="form-box" id="formBox">
+
+    <input type="text" id="name" placeholder="Full Name" required>
+    <input type="text" id="company" placeholder="Company Name" required>
+
+    <!-- ROLE DROPDOWN -->
+    <div class="dropdown" id="roleDropdown">
+      <div class="dropdown-trigger">
+        <span id="roleText">Your Role?</span>
+        <span class="arrow">⬇️</span>
+      </div>
+
+      <div class="dropdown-menu">
+        <input type="text" class="dropdown-search" placeholder="Search role...">
+
+        <div class="dropdown-item">Software Engineer - Trainee</div>
+        <div class="dropdown-item">Software Engineer - Developer</div>
+        <div class="dropdown-item">UI/UX Designer</div>
+        <div class="dropdown-item">Project Manager</div>
+        <div class="dropdown-item">Architect</div>
+        <div class="dropdown-item">Director</div>
+        <div class="dropdown-item">Other</div>
+      </div>
+    </div>
+
+    <!-- OTHER INPUT -->
+    <input type="text" id="otherRole" placeholder="Enter your role">
+
+    <input type="email" id="email" placeholder="Mail ID" required>
+    <input type="number" id="mobile" placeholder="Mobile Number" required>
+
+    <!-- INTEREST -->
+    <div class="dropdown" id="interestDropdown">
+      <div class="dropdown-trigger">
+        <span id="interestText">Interested to work closely with Team?</span>
+        <span class="arrow">⬇️</span>
+      </div>
+
+      <div class="dropdown-menu">
+        <div class="dropdown-item">Yes</div>
+        <div class="dropdown-item">Maybe</div>
+        <div class="dropdown-item">No</div>
+      </div>
+    </div>
+
+    <button onclick="submitForm()">Submit</button>
+  </div>
+
+  <div class="invite-msg" id="inviteMsg">
+  <h2>🎉 You're Invited to Explore the Future!</h2>
+
+  <p>
+    We are excited to invite you to experience <strong>Connecticus</strong> — a next-generation startup focused on revolutionizing how people connect, collaborate, and grow their networks seamlessly.
+  </p>
+
+  <p>
+    Our platform is designed to bridge gaps between all kinds of <strong>Turf bookings</strong>, <strong>Connecting Individuals & Sportspersons</strong> and opportunities to participate in the League Matches which will be Conducted for every 6 Months.
+  </p>
+
+  <p>
+    🚀 <strong>Prototype Sneak Peek:</strong><br>
+    Get an exclusive look at our early prototype, where you can explore key features, user flows, and the vision we are building towards.
+  </p>
+
+  <p>
+    🔗 <a href="connecticus.html" target="_blank">
+      Click here to view the prototype
+    </a>
+  </p>
+
+  <p>
+    We would love to hear your feedback and have you be part of our journey! Click the Contact Us Below in the Footer to get in touch with us directly.
+  </p>
+</div>
+</div>
+
+
+<div class="contact-panel" id="contactPanel">
+
+  <div class="contact-header">
+    <span>Contact</span>
+    <span class="close-btn" onclick="toggleContactPanel()">✖</span>
+  </div>
+
+  <div class="contact-body">
+    <p><strong>Name: </strong> Rupesh Sai Teja</p>
+    <p><strong>Designation: </strong> Co Founder and CEO</p>
+    <p><strong>Email: </strong> rupeshsaiteja9841@gmail.com</p>
+    <p><strong>Phone: </strong> +91 9676195493</p>
+    
+  </div>
+
+</div>
+
+<div class="footer">
+  <div class="footer-content">
+    
+    <div class="footer-left">
+      © 2026 Connecticus
+    </div>
+
+    <div class="footer-center">
+      Built with ❤️ for innovation by RST Group
+    </div>
+
+    <div class="footer-right">
+      <a href="#" onclick="toggleContactPanel()">Contact Us</a>
+    </div>
+
+  </div>
+</div>
+<!-- Custom Glass Alert Modal -->
+<div id="customAlert" class="modal-overlay">
+  <div class="glass-alert">
+    <div class="alert-content">
+      <p id="alertMessage"></p>
+      <button onclick="closeAlert()">OK</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
