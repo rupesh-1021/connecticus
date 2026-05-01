@@ -82,7 +82,7 @@ function submitForm() {
   const email = document.getElementById("email").value.trim();
   const mobile = document.getElementById("mobile").value.trim();
 
-  if (!name || !company || !email || !mobile
+  if (!name || !company || !email || !mobile ||
       selectedRole === "Your Role?" || 
       selectedInterest === "Interested to work closely with Team?") {
       
